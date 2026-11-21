@@ -1,0 +1,123 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.aquarium {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+    background: linear-gradient(
+        180deg,
+        #287b9a 0%,
+        #176587 48%,
+        #0b405f 100%
+    );
+}
+
+.swimmer {
+    position: absolute;
+    display: block;
+    height: auto;
+    object-fit: contain;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    will-change: transform;
+}
+
+.conca {
+    top: 13%;
+    left: 0;
+    width: clamp(90px, 10vw, 160px);
+    animation: moveRight 20s linear infinite;
+}
+
+.school {
+    top: 45%;
+    left: 0;
+    width: clamp(145px, 17vw, 245px);
+    animation: moveLeft 25s linear infinite;
+}
+
+.cavoi {
+    top: 25%;
+    left: 0;
+    width: clamp(150px, 19vw, 280px);
+    animation: moveRight 30s linear infinite;
+}
+
+.conrua {
+    top: 68%;
+    left: 0;
+    width: clamp(110px, 13vw, 190px);
+    animation: moveLeft 28s linear infinite;
+}
+
+.tho {
+    position: absolute;
+    left: 50%;
+    width: clamp(175px, 23vw, 340px);
+}
+
+.tholan {
+    top: 40%;
+    animation: diver-up-down 5s ease-in-out infinite;
+}
+@keyframes diver-up-down {
+    0% {
+        transform: translate(-50%, -30px);
+    }
+
+    25% {
+        transform: translate(-50%, 0);
+    }
+
+    50% {
+        transform: translate(-50%, 30px);
+    }
+
+    75% {
+        transform: translate(-50%, 0);
+    }
+
+    100% {
+        transform: translate(-50%, -30px);
+    }
+}
+
+@keyframes moveRight {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(100vw);
+    }
+}
+
+@keyframes moveLeft {
+    from {
+        transform: translateX(100vw) scaleX(-1);
+    }
+    to {
+        transform: translateX(-100%) scaleX(-1);
+    }
+}
+
+@media (max-width: 600px) {
+    .conca { width: 108px; }
+    .school { width: 156px; }
+    .cavoi { width: 160px; }
+    .conrua { width: 124px; }
+    .tho { width: 195px; }
+}
